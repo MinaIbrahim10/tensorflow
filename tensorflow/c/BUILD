@@ -623,7 +623,8 @@ cc_library(
         "//tensorflow/core/platform:protobuf",
         "@com_google_absl//absl/status",
         "@com_google_absl//absl/strings",
-    ],
+            "@com_google_absl//absl/synchronization",
+],
 )
 
 tf_cuda_library(
@@ -740,6 +741,7 @@ tf_cuda_library(
         "//tensorflow/core/util/tensor_bundle",
         "//tensorflow/core/util/tensor_bundle:naming",
         "@com_google_absl//absl/container:flat_hash_set",
+        "@com_google_absl//absl/synchronization",
     ],
 )
 
