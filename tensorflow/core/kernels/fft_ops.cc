@@ -326,7 +326,7 @@ class FFTNBase : public OpKernel {
                       "fft_length[", i,
                       "] must >= 0, but got: ", fft_length_as_vec(i))));
       OP_REQUIRES(
-          ctx, is_empty || fft_length_as_vec(i) > 0,
+          ctx, !IsReal() || is_empty || fft_length_as_vec(i) > 0,
           absl::InvalidArgumentError(absl::StrCat(
               "fft_length[", i, "] must be > 0 for non-empty inputs, but got: ",
               fft_length_as_vec(i))));
